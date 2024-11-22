@@ -8,7 +8,10 @@
     'depends': ['base', 'hr'],
     'data': [
         'security/ir.model.access.csv',
-        'views/document_views.xml'
+        'wizard/document_filter_wizard_view.xml',
+        'views/document_views.xml',
+        'report/report_document_template.xml',
+        'report/report_document.xml'
     ],
     'license': 'LGPL-3',
     'installable': True

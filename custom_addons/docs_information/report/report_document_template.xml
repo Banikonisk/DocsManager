@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_documents_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>Title: <t t-esc="doc.title"/></h2>
+                    <p>Description: <t t-esc="doc.description"/></p>
+                    <p>Created On: <t t-esc="doc.create_date"/></p>
+                    <p>Created By: <t t-esc="doc.user_id.name"/></p>
+                    <p>Company: <t t-esc="doc.company_id.name"/></p>
+                    <p>Responsible Employees:
+                        <t t-if="doc.employee_ids">
+                            <ul>
+                                <t t-if="len(doc.employee_ids)> 1">
+                                    <t t-foreach="doc.employee_ids" t-as="employee">
+                                        <li><t t-esc="employee.name"/></li>
+                                    </t>
+                                </t>
+                                <t t-if="len(doc.employee_ids) == 1">
+                                    <li><t t-esc="doc.employee_ids[0].name"/></li>
+                                </t>
+                            </ul>
+                        </t>
+                        <t t-if="not doc.employee_ids">None</t>
+                    </p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_report_documents"
+        model="documents.document"
+        string="Documents Report"
+        report_type="qweb-pdf"
+        name="docs_information.report_documents_template"
+        file="docs_information.report_documents_template"
+    />
+</odoo>
