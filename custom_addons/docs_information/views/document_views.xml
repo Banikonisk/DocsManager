@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_document">
+        <field name="name">Documents</field>
+        <field name="res_model">documents.document</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_documents_root" name="Document Management" web_icon="docs_information,\static\description\icon.png" sequence="0"/>
+    <menuitem id="submenu_documents" name="Documents" parent="menu_documents_root" action="action_document" sequence="0"/>
+
+    <record model="ir.ui.view" id="view_document_tree">
+        <field name="name">documents.document.tree</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <tree string="Documents">
+                <field name="title"/>
+                <field name="company_id"/>
+                <field name="user_id"/>
+                <field name="employee_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_document_form">
+        <field name="name">documents.document.form</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <form string="Document">
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="description"/>
+                        <field name="company_id"/>
+                        <field name="user_id"/>
+                        <field name="employee_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
