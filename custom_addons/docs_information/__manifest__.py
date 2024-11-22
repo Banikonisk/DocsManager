@@ -7,6 +7,7 @@
     'description': 'Module to manage documents and books',
     'depends': ['base', 'hr'],
     'data': [
+        'security/docs_information_security.xml',
         'security/ir.model.access.csv',
         'wizard/document_filter_wizard_view.xml',
         'views/document_views.xml',

@@ -7,7 +7,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_documents_root" name="Document Management" web_icon="docs_information,\static\description\icon.png" sequence="0"/>
+    <menuitem id="menu_documents_root" name="Document Management" web_icon="docs_information,\static\description\icon.png" sequence="0"
+    groups="docs_information.group_user,docs_information.group_admin"/>/>
     <menuitem id="submenu_documents" name="Documents" parent="menu_documents_root" action="action_document" sequence="0"/>
     <menuitem id="submenu_create_report" name="Create Report" parent="submenu_documents" action="action_document_filter_wizard" sequence="1"/>
 
